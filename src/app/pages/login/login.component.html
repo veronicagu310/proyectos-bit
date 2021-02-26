@@ -1,0 +1,44 @@
+<app-menu-login></app-menu-login>
+<div class="container mt-3">
+    <div class="card p-5">
+        <form ngNativeValidate (ngSubmit)="registrar()">
+
+            <div class="mb-3">
+
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+
+                <input name="email" [(ngModel)]="userInfo.email" [ngModelOptions]={standalone:true} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+
+                <div id="emailHelp" class="form-text text-danger" *ngIf=userInfoValidator.email>Email requerido</div>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label for="exampleInputEmail1" class="form-label">Username</label>
+
+                <input name="userName" [(ngModel)]="userInfo.userName" [ngModelOptions]={standalone:true} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="userNameHelp">
+                <div id="userNameHelp" class="form-text text-danger" *ngIf=userInfoValidator.userName>Nombre de usuario requerido</div>
+            </div>
+
+            <div class="mb-3">
+
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+
+                <input name="password" [(ngModel)]="userInfo.password" [ngModelOptions]={standalone:true} type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp">
+                <div id="passwordHelp" class="form-text text-danger" *ngIf=userInfoValidator.password>Contraseña requerida</div>
+            </div>
+
+            <div class="mb-3 form-check">
+
+                <input name="boton" type="checkbox" class="form-check-input" id="exampleCheck1">
+
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</div>
