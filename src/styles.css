@@ -58,6 +58,9 @@ body {
 .bg-black ul li a {
     color: white;
 }
+.text-white {
+    color: white;
+}
 
 @media screen and (max-width: 500px) {
     body {
